@@ -1,0 +1,6 @@
+train: D:\luffy\Phan_loai_trai_cay-3\train\images
+val: D:\luffy\Phan_loai_trai_cay-3\train\images
+test: D:\luffy\Phan_loai_trai_cay-3\train\images
+
+nc: 3
+names: ["Phan-loai-trai-cay", "luffy", "xoai"]
