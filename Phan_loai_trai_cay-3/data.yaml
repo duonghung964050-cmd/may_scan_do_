@@ -1,0 +1,7 @@
+names:
+- Phan-loai-trai-cay
+- luffy
+nc: 2
+path: D:/UTH/Python_Languae/Impotant_Project/may_scan_do_/phan_loai_trai_cay-3
+train: train/images
+val: train/images

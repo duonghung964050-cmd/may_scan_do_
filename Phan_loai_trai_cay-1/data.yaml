@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['Phan-loai-trai-cay', 'luffy']
+
+roboflow:
+  workspace: duonghungs-workspace
+  project: phan_loai_trai_cay-0tshd
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/duonghungs-workspace/phan_loai_trai_cay-0tshd/dataset/1
