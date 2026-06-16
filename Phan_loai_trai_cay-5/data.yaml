@@ -1,0 +1,6 @@
+train: D:\training\Phan_loai_trai_cay-5\train\images
+val: D:\training\Phan_loai_trai_cay-5\train\images
+test: D:\training\Phan_loai_trai_cay-5\train\images
+
+nc: 2
+names: ["apple", "xoai"]
