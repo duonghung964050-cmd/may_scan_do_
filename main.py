@@ -11,14 +11,11 @@ import matplotlib.pyplot as plt
 
 # --- CẤU HÌNH GIAO DIỆN WEB ---
 st.set_page_config(page_title="Hệ Thống Phân Loại Trái Cây", layout="wide")
-st.title("🍎 Hệ Thống Phân Loại Trái Cây")
+st.title("🍎 Hệ Thống Phân Loại Trái Cây Tốc Độ Cao")
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-FONT_PATH = r"E:\minecraft-f2d-v1-42.otf"
-try:
-    font_mc = ImageFont.truetype(FONT_PATH, size=22)
-except OSError:
-    font_mc = ImageFont.truetype(r"C:\Windows\Fonts\arial.ttf", size=22)
+FONT_PATH = r"D:\may_phan_loai_trai_cay\minecraft-f2d-v1-42.otf"
+font_mc = ImageFont.truetype(FONT_PATH, size=22)
 
 from database import Database
 from Dectect import AppleCounter
@@ -26,7 +23,7 @@ from Dectect import AppleCounter
 @st.cache_resource
 def init_db_and_model():
     db = Database()
-    model = YOLO(r"D:\UTH\Python_Languae\Impotant_Project\may_scan_do_\train-29\weights\best.pt")
+    model = YOLO("D:/training/runs/detect/train-29/weights/best.pt")
     return db, model
 
 db, model = init_db_and_model()
@@ -142,7 +139,7 @@ with col2:
         )
         st.success(f"🎉 Đã kết thúc và lưu Session #{st.session_state.session_id}!")
 
-# --- HÀM VẼ BIỂU ĐỒ ---
+# --- HÀM VẼ BIỂU ĐỒ --- 
 def render_chart():
     fig, ax = plt.subplots(figsize=(5, 3.5))
     loai_tao = ["Táo Đỏ", "Táo Xanh", "Táo Hư"]
@@ -182,7 +179,7 @@ if st.session_state.cam_running:
         # Xử lý nhận diện qua mô hình YOLOv12/v8
         results = model.track(
             frame, persist=True, stream=True, conf=0.90, imgsz=480, 
-            data=r"D:\UTH\Python_Languae\Impotant_Project\may_scan_do_\Phan_loai_trai_cay-8\data.yaml"
+            data="D:/training/Phan_loai_trai_cay-8/data.yaml"
         )
 
         for r in results:
