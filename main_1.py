@@ -146,7 +146,3 @@ plt.ylim(0, max(so_luong) + 3)
 # Hiển thị biểu đồ
 plt.tight_layout()
 plt.show()
-
-loai_tao = ["Táo Đỏ", "Táo Xanh", "Táo Hư"]
-so_luong = [count_apple, count_green_apple, count_Moldy_apple]
-mau_sac = ["red", "green", "gray"]
