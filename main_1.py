@@ -2,7 +2,6 @@ import cv2
 import os
 import matplotlib.pyplot as plt
 
-from requests import session
 from database import Database
 from Dectect import AppleCounter
 
