@@ -108,11 +108,6 @@ cv2.destroyAllWindows()
 AppleCounter.end_session(db, session_id, count_apple, count_green_apple, count_Moldy_apple)
 
 
-print(f"\n--- BÁO CÁO CA LÀM VIỆC (Session #{session_id}) ---")
-print(f"Tổng số lượng Táo Đỏ đã đóng gói    : {count_apple}")
-print(f"Tổng số lượng Táo Xanh đã đóng gói: {count_green_apple}")
-print(f"Tổng số lượng Táo Hư đã đóng gói  : {count_Moldy_apple}")
-
 
 # Tạo dữ liệu cho biểu đồ
 loai_tao = ["Táo Đỏ", "Táo Xanh", "Táo Hư"]
@@ -155,43 +150,3 @@ plt.show()
 loai_tao = ["Táo Đỏ", "Táo Xanh", "Táo Hư"]
 so_luong = [count_apple, count_green_apple, count_Moldy_apple]
 mau_sac = ["red", "green", "gray"]
-
-
-# In báo cáo ra màn hình Terminal
-print(f"--- BÁO CÁO CA LÀM VIỆC (Session #{session_id}) ---")
-print(f"Tổng số lượng Táo Đỏ đã đóng gói   : {count_apple}")
-print(f"Tổng số lượng Táo Xanh đã đóng gói  : {count_green_apple}")
-print(f"Tổng số lượng Táo Hư đã đóng gói    : {count_Moldy_apple}")
-
-
-# Vẽ biểu đồ cột
-plt.figure(figsize=(8, 5))
-cot = plt.bar(loai_tao, so_luong, color=mau_sac)
-
-
-# Tiêu đề và nhãn
-plt.title(f"BÁO CÁO CA LÀM VIỆC - SESSION #{session_id}", fontsize=14, fontweight="bold")
-plt.xlabel("Loại táo")
-plt.ylabel("Số lượng đã đóng gói")
-
-
-# Hiện số lượng trên đầu từng cột
-for c in cot:
-    chieu_cao = c.get_height()
-    plt.text(
-        c.get_x() + c.get_width() / 2,
-        chieu_cao + 0.2,
-        str(int(chieu_cao)),
-        ha="center",
-        fontsize=12
-    )
-
-
-# Canh trục Y cho đẹp
-plt.ylim(0, max(so_luong) + 3)
-
-
-# Hiển thị biểu đồ
-plt.tight_layout()
-plt.show()
-
