@@ -3,7 +3,7 @@ import os
 import matplotlib.pyplot as plt
 
 from database import Database
-from Detect import AppleCounter
+from Dectect import AppleCounter
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
