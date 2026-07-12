@@ -3,11 +3,11 @@ import os
 import matplotlib.pyplot as plt
 
 from database import Database
-from Dectect import AppleCounter
+from Detect import AppleCounter
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-from ultralytics import YOLO
 
+from ultralytics import YOLO
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 
@@ -31,7 +31,6 @@ session_id = AppleCounter.start_session(db)
 # ===========================================================
 
 model = YOLO("D:/training/runs/detect/train-29/weights/best.pt")
-
 count_apple      = 0
 count_green_apple = 0
 count_Moldy_apple = 0
@@ -88,7 +87,6 @@ while cap.isOpened():
                         detection = AppleCounter(session_id, int(track_id), product_type)
                         detection.save_detection(db)
                     
-
         frame = r.plot()
 
     frame = draw_minecraft_text(frame, [
@@ -101,13 +99,10 @@ while cap.isOpened():
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
-
 cap.release()
 cv2.destroyAllWindows()
 
 AppleCounter.end_session(db, session_id, count_apple, count_green_apple, count_Moldy_apple)
-
-
 
 # Tạo dữ liệu cho biểu đồ
 loai_tao = ["Táo Đỏ", "Táo Xanh", "Táo Hư"]
